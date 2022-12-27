@@ -56,8 +56,6 @@ def submenu_one():
             
             23) Install zenmap
             
-            0) BACK
-            
            -1) EXIT 
             
             """)
@@ -154,11 +152,7 @@ def submenu_one():
 
         elif secundary_option == 23:
 
-            system("sudo apt install zenmap")
-
-        elif secundary_option == 0:
-
-            menu_main()                
+            system("sudo apt install zenmap")                
 
         elif secundary_option == -1:
             system("clear")
@@ -185,7 +179,6 @@ def submenu_two():
         print(""" 
         
             1) Get Information about system
-            0) back
            -1) Exit
             
         
@@ -223,4 +216,58 @@ def submenu_two():
         print("Error: {}".format(error))    
 
 def submenu_three():
-    print('ccc')
+    
+            
+    print("""
+            
+        1) Update repositories
+                 
+        2) Upgrade System
+                 
+        3) Dist-upgrade
+                 
+        4) ADD repositories in your sourcelist
+                 
+        5) Poweroff
+                 
+        6) Reboot
+                                  
+        -1 EXIT
+            
+        """)
+
+    option_second = int(input("Option: "))
+
+    if option_second == 1:
+
+        system("sudo apt update")
+
+    elif option_second == 2:
+
+        system("sudo apt upgrade")
+
+    elif option_second == 3:
+
+        system("sudo apt dist-upgrade")
+
+    elif option_second == 4:
+
+        add = str(input("Repository: "))
+
+    elif option_second == 5:
+
+        system("sudo poweroff")
+
+    elif option_second == 6:
+
+        system("sudo reboot")
+
+    elif option_second == -1:
+
+        exit()
+
+    else:
+
+        print("Option no avaible")
+        submenu_three()
+                    
