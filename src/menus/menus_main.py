@@ -1,5 +1,6 @@
 from os import system
-from src.submenus import submenus
+from time import sleep
+from src.submenus.submenus import submenu_one, submenu_two, submenu_three
 
 def menu_main():
     
@@ -9,7 +10,6 @@ def menu_main():
                 1) Install tools of pentest
                 2) Red dragon Tools
                 3) System management 
-                0) BACK
                 -1) EXIT
                     
         """)
@@ -17,15 +17,23 @@ def menu_main():
         option_main = int(input("Your option: "))
 
         if option_main == 1:
-            ...
+            
+            submenu_one()
+
         elif option_main == 2:
-            ...
+            
+            submenu_two()
+
         elif option_main == 3:
-            ...
-        elif option_main == 0:
-            ...
+            
+            submenu_three()
+
         elif option_main == -1:
-            ...
+
+            print("Goodbye...")
+            sleep(1)
+            system("clear")
+
         else:
             system("clear")
             print("Invalid option. Try again.")
